@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Form Style</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f8f9fd 0%, #e7eefc 100%);
+      color: #202124;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .form-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
+      padding: 32px;
+    }
+
+    .form-card h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    .form-card p.description {
+      margin: 0 0 24px;
+      color: #5f6368;
+      line-height: 1.6;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #dfe1e5;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: #4285f4;
+      box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.16);
+    }
+
+    .option-group {
+      display: grid;
+      gap: 12px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid #dfe1e5;
+      border-radius: 12px;
+      background: #fafafb;
+    }
+
+    .option input {
+      margin: 0;
+    }
+
+    .submit-row {
+      text-align: right;
+      margin-top: 16px;
+    }
+
+    button {
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      background: #1967d2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-card">
+      <h1>Student Feedback Form</h1>
+      <p class="description">Please fill out this short form so we can improve our classes and website. All answers are anonymous unless you choose to share your name.</p>
+
+      <form action="#" method="post">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name (optional)" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="example@mail.com" />
+        </div>
+
+        <div class="field">
+          <label for="course">Which course did you attend?</label>
+          <select id="course" name="course">
+            <option value="">Select a course</option>
+            <option value="html_css">HTML & CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>How satisfied are you with the content?</label>
+          <div class="option-group">
+            <label class="option"><input type="radio" name="satisfaction" value="very_satisfied" /> Very satisfied</label>
+            <label class="option"><input type="radio" name="satisfaction" value="satisfied" /> Satisfied</label>
+            <label class="option"><input type="radio" name="satisfaction" value="neutral" /> Neutral</label>
+            <label class="option"><input type="radio" name="satisfaction" value="dissatisfied" /> Dissatisfied</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>What did you like most?</label>
+          <div class="option-group">
+            <label class="option"><input type="checkbox" name="liked[]" value="examples" /> Examples</label>
+            <label class="option"><input type="checkbox" name="liked[]" value="exercises" /> Exercises</label>
+            <label class="option"><input type="checkbox" name="liked[]" value="speed" /> Pace</label>
+            <label class="option"><input type="checkbox" name="liked[]" value="presentation" /> Presentation</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="feedback">Additional feedback</label>
+          <textarea id="feedback" name="feedback" rows="5" placeholder="Write your suggestion or comment here..."></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
